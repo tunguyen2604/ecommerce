@@ -24,6 +24,7 @@ int main() {
     Node* root = NULL;
     int arr[1000];
     int i, key;
+    printf("hello world \n");
 
     // Generate 1000 random integers and insert into Red-Black Tree
     for (i = 0; i < 1000; i++) {
