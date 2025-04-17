@@ -15,7 +15,7 @@ public class Cart {
     }
     public void listDVDInTheCart(){
         for(Book dvd: this.itemsOrdered){
-            dvd.displayDVD();
+            // dvd.displayDVD();
         }
     }
 
@@ -39,7 +39,7 @@ public class Cart {
     public double totalCost() {
         double sum = 0;
         for (Book item : itemsOrdered) {
-            sum+= item.getCost();
+            // sum+= item.getCost();
         }
         return sum;
     }

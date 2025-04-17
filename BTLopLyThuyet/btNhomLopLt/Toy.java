@@ -3,7 +3,7 @@ public class Toy extends  Products{
     private double cost = 0;
     private int suitableAge;
 
-    public void displayDVD(){
+    public void displayImformation (){
         System.out.println("title: "+this.name);
         System.out.println("category: "+this.category);
         System.out.println("suitable age: "+this.suitableAge);
