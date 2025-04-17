@@ -7,7 +7,7 @@ public class Stationary extends Products {
 
     
   
-    public void displayDVD(){
+    public void displayImformation(){
         System.out.println("name: "+this.name);
         System.out.println("category: "+this.type);
         System.out.println("brand: "+this.brand);
