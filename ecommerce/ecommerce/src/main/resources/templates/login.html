@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<!-- <html lang ="vi">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Trang đăng nhập</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <h1>Trang đăng nhập</h1>
-        <p>Nhập vào tài khoản vsjdfjdsfldjlfljà mật khẩu</p>
-    </body>
-
-</html> -->
 <head>
     <meta charset="UTF-8">
     <title>Đăng nhập</title>
+    <meta name="viewport" content="ice-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="header">
+        <div class="logo">HUST BOOK STORE</div>
+        <nav class="nav">
+            <a href="">Trang chủ</a>
+            <a href="Product">Sách</a>
+            <a href="#">Văn phòng phẩm</a>
+            <a href="login">Đăng nhập</a>
+            <a href="signin">Đăng ký</a>
+        </nav>
+    </header>
     <h2>Trang đăng nhập</h2>
-    <form th:action="@{/login}" method="post">
+    <form class ="main-content"></class> th:action="@{/login}" method="post">
         <label>Tên đăng nhập:</label>
         <input type="text" name="username" />
         <br>
@@ -28,5 +27,8 @@
         <br>
         <button type="submit">Đăng nhập</button>
     </form>
+    <footer>
+        <p>Bản quyền thuộc cửa hàng sách HUST BOOK STORE</p>
+    </footer>
 </body>
 </html>
