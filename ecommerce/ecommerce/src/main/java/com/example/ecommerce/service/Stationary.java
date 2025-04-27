@@ -1,4 +1,4 @@
-package com.example.ecommerce.model;
+package com.example.ecommerce.service;
 
 public class Stationary extends Products {
     private int stationary_id;

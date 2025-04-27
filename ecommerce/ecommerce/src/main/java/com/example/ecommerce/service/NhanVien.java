@@ -5,7 +5,6 @@ public class NhanVien {
     public static double getLuongCoBan() {
         return luongCoBan;
     }
-
     public static void setLuongCoBan(double luongCoBan) {
         if(luongCoBan<=0) {
             System.out.println("luong co ban phai >0");

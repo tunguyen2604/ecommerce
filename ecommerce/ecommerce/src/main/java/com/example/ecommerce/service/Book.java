@@ -1,4 +1,4 @@
-package com.example.ecommerce.model;
+package com.example.ecommerce.service;
 
 public class Book extends Products {
     private String category = "null";
