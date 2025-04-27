@@ -1,4 +1,4 @@
-public class orderItem {
+public class OrderItem {
     Products products;
     int soldQuantity;
     int unitPrice;
