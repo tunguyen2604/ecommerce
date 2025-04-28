@@ -49,14 +49,6 @@ public class NhanVien {
       System.out.println("Ten nhan vien: " + this.tenNhanVien);
       System.out.println("He so luong: " + this.heSoLuong);
       System.out.println("Luong: " + this.tinhLuong() + " tr vnd.");
-   public void inTTin() {
-      System.out.println("Ten nhan vien: " + this.tenNhanVien);
-      System.out.println("He so luong: " + this.heSoLuong);
-      System.out.println("Luong: " + this.tinhLuong() + " tr vnd.");
-   public void inTTin() {
-      System.out.println("Ten nhan vien: " + this.tenNhanVien);
-      System.out.println("He so luong: " + this.heSoLuong);
-      System.out.println("Luong: " + this.tinhLuong() + " tr vnd.");
    }
 
 

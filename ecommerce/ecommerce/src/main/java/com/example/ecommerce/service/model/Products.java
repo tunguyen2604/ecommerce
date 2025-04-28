@@ -1,7 +1,8 @@
-package com.example.ecommerce.service;
+package com.example.ecommerce.service.model;
 
 public class Products {
      int Products_id;
+     String image;
      short type;
      String name ;
      int purchasePrice ;
@@ -39,6 +40,14 @@ public class Products {
      public void setTax(double tax) {
          this.tax = tax;
      }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
 
 

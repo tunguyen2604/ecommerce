@@ -1,10 +1,17 @@
-package com.example.ecommerce.service;
+package com.example.ecommerce.service.model;
 
 public class Book extends Products {
     private String category = "null";
     private String author = "null";
     private String isbn ;
-
+    
+    
+    public Book(int products_id, String name, String isbn) {
+        super();
+        this.Products_id = products_id;
+        this.name = name;
+        this.isbn = isbn;
+    }
     public Book() {
     }
     
@@ -37,12 +44,6 @@ public class Book extends Products {
     }
 
     public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public Book(int products_id, String name, String isbn) {
-        this.Products_id = products_id;
-        this.name = name;
         this.isbn = isbn;
     }
     
