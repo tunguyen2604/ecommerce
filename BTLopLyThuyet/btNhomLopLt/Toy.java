@@ -1,5 +1,5 @@
 public class Toy extends  Products{
-    private String category = "null";
+    private String category ;
     private double cost = 0;
     private int suitableAge;
 
@@ -33,11 +33,6 @@ public class Toy extends  Products{
     public void setSuitableAge(int suitableAge) {
         this.suitableAge = suitableAge;
     }
-
-
-
-
-    
 }
 
 
