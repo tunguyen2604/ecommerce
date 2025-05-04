@@ -28,8 +28,8 @@
 
         <tbody>
             <tr th:each="item : ${cartItems}">
+                
                 <td><input type="checkbox" class="product-checkbox" data-quantity="${item.quantity}" data-price="${item.price * item.quantity}"></td>
-
                 <td class="product-info">
                     <img th:src="@{/image/arya.jpg}" alt="Sách">
                     <div>

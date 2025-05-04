@@ -61,6 +61,21 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+    
+      <dependency>
+        <groupId>com.contentgrid.spring</groupId>
+        <artifactId>contentgrid-spring-data-rest</artifactId>
+        <version>0.18.1</version>
+      </dependency>
+    
+    <!-- Spring Boot Starter Web -->
+    
+    
+    <!-- Spring Boot Starter Security (nếu cần xác thực) -->
+    <!-- <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency> -->
     </dependencies>
 
     <build>
