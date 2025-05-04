@@ -3,17 +3,29 @@ package com.example.ecommerce.model;
 
 import java.util.Date;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "customer") 
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int CustomerID;
+
     String name;
     String phone;
     String email;
     String address;
     Date DOB;
-    public int getCustomerID() {
+
+    public Customer(String name) {
+        this.name = name;
+    }
+
+    public int getID() {
         return CustomerID;
     }
-    public void setCustomerID(int customerID) {
+    public void setID(int customerID) {
         CustomerID = customerID;
     }
     public String getName() {

@@ -1,7 +1,13 @@
 package com.example.ecommerce.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Products {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
      int Products_id;
+     
      String image;
      int type;
      String name ;
