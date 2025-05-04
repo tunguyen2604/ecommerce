@@ -10,9 +10,9 @@ Dự án này là một website bán sách, văn phòng phẩm và đồ chơi. 
 ## Giấy phép
 Dự án này được phân phối dưới giấy phép MIT. Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 ## Liên hệ
-- Email: example@example.com
+- Email: hung.lv235740@sis.hust.edu.vn
 - Twitter: [@username](https://twitter.com/username)
-- [GitHub](https://github.com)
+- [GitHub](https://github.com/deepdev-hub)
 - ![Mô tả ảnh](https://example.com/image.png)
 - Sử dụng lệnh `git init` để khởi tạo repository.
 - ```bash
