@@ -1,6 +1,6 @@
 # du an cua toi
 ## Mô tả
-Dự án này là một ứng dụng web giúp quản lý công việc hàng ngày, được xây dựng bằng ReactJS và Node.js.
+Dự án này là một website bán sách, văn phòng phẩm và đồ chơi. Sử dụng html, css, JavaScript, java, project maven hỗ trợ bởi spring boot, text editor Visual studio code, sử dụng spring JPA để lấy dữ liệu từ postgressSQL, sử dụng Thymeleaf để kết nối fontend với backend.
 ## Đóng góp
 1. Fork repository.
 2. Tạo nhánh mới (`git checkout -b feature/AmazingFeature`).
