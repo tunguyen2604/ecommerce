@@ -1,4 +1,4 @@
-# du an cua toi
+# e-commerce website 
 ## Mô tả
 Dự án này là một website bán sách, văn phòng phẩm và đồ chơi. Sử dụng html, css, JavaScript, java, project maven hỗ trợ bởi spring boot, text editor Visual studio code, sử dụng spring JPA để lấy dữ liệu từ postgressSQL, sử dụng Thymeleaf để kết nối fontend với backend.
 ## Đóng góp
