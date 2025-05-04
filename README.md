@@ -11,7 +11,7 @@ Dự án này là một website bán sách, văn phòng phẩm và đồ chơi. 
 ## Liên hệ
 - Email: hung.lv235740@sis.hust.edu.vn
 - Facebook: Lương Văn Hưng (https://www.facebook.com/luong.van.hung.20235740)
-- [GitHub](https://github.com/deepdev-hub)
+- Github(https://github.com/deepdev-hub)
 - ![Mô tả ảnh](https://example.com/image.png)
 - Sử dụng lệnh `git init` để khởi tạo repository.
 - ```bash
