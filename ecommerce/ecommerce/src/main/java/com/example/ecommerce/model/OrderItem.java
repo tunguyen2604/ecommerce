@@ -1,19 +1,21 @@
 package com.example.ecommerce.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class OrderItem {
-    int OrderID;
+    @Id
     int OrderItemID;
-    Products products;
+
+    @OneToOne
+    @JoinColumn(name = "OrderItemID")
+    Product products;
     int soldQuantity;
     int unitPrice;
 
-    public int getOrderID() {
-        return OrderID;
-    }
-
-    public void setOrderID(int orderID) {
-        OrderID = orderID;
-    }
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    Order order;
 
     public int getOrderItemID() {
         return OrderItemID;
@@ -23,11 +25,11 @@ public class OrderItem {
         OrderItemID = orderItemID;
     }
 
-    public Products getProducts() {
+    public Product getProducts() {
         return products;
     }
 
-    public void setProducts(Products products) {
+    public void setProducts(Product products) {
         this.products = products;
     }
 
@@ -47,7 +49,7 @@ public class OrderItem {
         this.unitPrice = unitPrice;
     }
 
-    public OrderItem(Products products, int unitPrice) {
+    public OrderItem(Product products, int unitPrice) {
         this.products = products;
         this.unitPrice = unitPrice;
     }

@@ -1,7 +1,6 @@
 package com.example.ecommerce.model;
 
 
-import java.util.Date;
 
 import jakarta.persistence.*;
 
@@ -10,29 +9,47 @@ import jakarta.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int CustomerID;
+    int customerid;
 
-    String name;
+    String customername;
+    String firstname;
+    String lastname;
+    String gender;
+    String cardnumber;
     String phone;
     String email;
     String address;
-    Date DOB;
+
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+    Cart cart;
+
+    public Customer() {
+    }
 
     public Customer(String name) {
-        this.name = name;
+        this.customername = name;
+    }
+
+    public Customer(int customerID, String name, String phone, String email, String address) {
+        customerid = customerID;
+        this.customername = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        
     }
 
     public int getID() {
-        return CustomerID;
+        return customerid;
     }
     public void setID(int customerID) {
-        CustomerID = customerID;
+        this.customerid = customerID;
     }
     public String getName() {
-        return name;
+        return customername;
     }
     public void setName(String name) {
-        this.name = name;
+        this.customername = name;
     }
     public String getPhone() {
         return phone;
@@ -52,11 +69,14 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
-    public Date getDOB() {
-        return DOB;
+
+    public Cart getCart() {
+        return cart;
     }
-    public void setDOB(Date dOB) {
-        DOB = dOB;
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
+    
     
 }
