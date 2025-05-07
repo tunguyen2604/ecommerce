@@ -1,25 +1,22 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Inventory {
     int lowStockTheshold;
-    List<Book> listBook = new ArrayList<>(); 
+    List<Products> listProduct = new ArrayList<>();
 
-    public void addBook(Book book){
-        listBook.add(book);
-        
+    public int getLowStockTheshold() {
+        return lowStockTheshold;
     }
-    List<Toy> listToy = new ArrayList<>(); 
 
-    public void addToy(Toy Toy){
-        listToy.add(Toy);
-        
+    public void setLowStockTheshold(int lowStockTheshold) {
+        this.lowStockTheshold = lowStockTheshold;
     }
-    List<Stationary> listStationary = new ArrayList<>(); 
 
-    public void addStationary(Stationary Stationary){
-        listStationary.add(Stationary);
-        
+    public void addBook(Book giaiTich1) {
+        // TODO Auto-generated method stub
+        listProduct.add(giaiTich1);
+
     }
 }
+

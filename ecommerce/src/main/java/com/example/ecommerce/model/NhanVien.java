@@ -1,9 +1,10 @@
+package com.example.ecommerce.model;
+
 public class NhanVien {
 
     public static double getLuongCoBan() {
         return luongCoBan;
     }
-
     public static void setLuongCoBan(double luongCoBan) {
         if(luongCoBan<=0) {
             System.out.println("luong co ban phai >0");
@@ -30,6 +31,7 @@ public class NhanVien {
       return this.heSoLuong * NhanVien.luongCoBan;
    }
 
+    @SuppressWarnings("unused")
    boolean tangHeSoLuong(double heSoTang) {
     if(this.heSoLuong + heSoTang<=0) {
         System.out.println("he so luong phai >0");

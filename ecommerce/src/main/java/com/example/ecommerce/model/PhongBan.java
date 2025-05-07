@@ -1,3 +1,5 @@
+package com.example.ecommerce.model;
+
 import java.util.Stack;  
 public class PhongBan{
     Stack<NhanVien> stk = new Stack<>();
