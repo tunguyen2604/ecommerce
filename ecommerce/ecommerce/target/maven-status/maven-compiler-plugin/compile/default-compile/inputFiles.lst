@@ -3,6 +3,7 @@ D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\eco
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\model\Cart.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\model\Products.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\model\Stationary.java
+D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\controller\OrderHistoryController.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\controller\cartController.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\controller\detailController.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\repository\CustomerRepository.java
@@ -19,4 +20,5 @@ D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\eco
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\model\OrderItem.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\model\NhanVien.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\model\TruongPhong.java
+D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\repository\OrderLineRepository.java
 D:\program\myProject\myProject\ecommerce\ecommerce\src\main\java\com\example\ecommerce\model\Order.java

@@ -1,6 +1,7 @@
 com\example\ecommerce\model\Customer.class
 com\example\ecommerce\controller\signupController.class
 com\example\ecommerce\model\Products.class
+com\example\ecommerce\repository\OrderLineRepository.class
 com\example\ecommerce\model\Inventory.class
 com\example\ecommerce\repository\CustomerRepository.class
 com\example\ecommerce\model\Main.class
@@ -10,6 +11,7 @@ com\example\ecommerce\controller\LoginController.class
 com\example\ecommerce\model\Stationary.class
 com\example\ecommerce\model\Toy.class
 com\example\ecommerce\controller\Home.class
+com\example\ecommerce\controller\OrderHistoryController.class
 com\example\ecommerce\model\Cart.class
 com\example\ecommerce\EcommerceApplication.class
 com\example\ecommerce\model\OrderItem.class
