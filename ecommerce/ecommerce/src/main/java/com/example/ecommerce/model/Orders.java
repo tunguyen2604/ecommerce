@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int orderid;
@@ -74,23 +74,23 @@ public class Order {
         this.customerid = customerid;
     }
 
-    public List<OrderItem> getList_OrderItems() {
+    public List<Orderlines> getList_OrderItems() {
         return list_OrderItems;
     }
 
-    public void setList_OrderItems(List<OrderItem> list_OrderItems) {
+    public void setList_OrderItems(List<Orderlines> list_OrderItems) {
         this.list_OrderItems = list_OrderItems;
     }
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    List<OrderItem> list_OrderItems = new ArrayList<>();
-    public Order(int orderID, int customerID,  int totalAmount, short  status) {
+    List<Orderlines> list_OrderItems = new ArrayList<>();
+    public Orders(int orderID, int customerID,  int totalAmount, short  status) {
         this.orderid = orderID;
         this.customerid = customerID;
         this.totalAmount = totalAmount;
     }
 
-    public void addOrderItem(OrderItem orderItem1) {
+    public void addOrderItem(Orderlines orderItem1) {
         // TODO Auto-generated method stub
         list_OrderItems.add(orderItem1);
     }

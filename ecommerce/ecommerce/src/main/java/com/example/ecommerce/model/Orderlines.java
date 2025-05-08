@@ -1,20 +1,31 @@
 package com.example.ecommerce.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
-public class OrderItem {
+@Table(name="orderlines")
+public class Orderlines {
     @Id
     int OrderItemID;
 
-    @OneToOne
-    @JoinColumn(name = "OrderItemID")
+    @ManyToOne
+    @JoinColumn(name = "id")
     Product products;
-    int soldQuantity;
+    @ManyToOne
+    @JoinColumn
+    private Orders orders;
+
+    @Column(name="orderid")
+    Integer orderid;
+    @Column(name="quantity")
+    int quantity;
+    
     int unitPrice;
     String customerid;
     String productName;
@@ -22,16 +33,29 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    Order order;
+    Orders order;
 
+    public Orderlines(int orderItemID, Product products, Orders orders, Integer orderid, int quantity, int unitPrice,
+            String customerid, String productName, String productImage, Orders order) {
+        OrderItemID = orderItemID;
+        this.products = products;
+        this.orders = orders;
+        this.orderid = orderid;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+        this.customerid = customerid;
+        this.productName = productName;
+        this.productImage = productImage;
+        this.order = order;
+    }
     public void setOrderItemID(int orderItemID) {
         OrderItemID = orderItemID;
     }
-    public int getSoldQuantity() {
-        return soldQuantity;
+    public int getQuantity() {
+        return quantity;
     }
-    public void setSoldQuantity(int soldQuantity) {
-        this.soldQuantity = soldQuantity;
+    public void setQuantity(int soldQuantity) {
+        this.quantity = soldQuantity;
     }
     public int getUnitPrice() {
         return unitPrice;
@@ -57,10 +81,10 @@ public class OrderItem {
     public void setProductImage(String productImage) {
         this.productImage = productImage;
     }
-    public Order getOrder() {
+    public Orders getOrder() {
         return order;
     }
-    public void setOrder(Order order) {
+    public void setOrder(Orders order) {
         this.order = order;
     }
     public int getOrderItemID() {
@@ -90,7 +114,7 @@ public class OrderItem {
         this.productImage = productImage;
     }
 
-    public OrderItem(Product products, int unitPrice) {
+    public Orderlines(Product products, int unitPrice) {
         this.products = products;
         this.unitPrice = unitPrice;
     }

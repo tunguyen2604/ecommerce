@@ -26,7 +26,7 @@ public class productController {
         return "products";
     }
 
-    public ProductController(ProductRepository productRepository) {
+    public productController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

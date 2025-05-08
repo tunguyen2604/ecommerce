@@ -10,4 +10,11 @@ public class Inventory {
     public void addProduct(Product p) {
         itemsInStock.add(p);
     }
+    public List<Product> getItemsInStock() {
+        return itemsInStock;
+    }
+    public void setItemsInStock(List<Product> itemsInStock) {
+        this.itemsInStock = itemsInStock;
+    }
+
 }
