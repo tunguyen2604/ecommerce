@@ -1,12 +1,24 @@
 package com.example.ecommerce.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Products")
 public class Products {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
      int Products_id;
      String image;
      int type;
+
+    @Column(name = "productName", nullable = false)
      String name ;
+
+     @Column(name = "purchasePrice", nullable = false)
      int purchasePrice ;
      int quantity;
+
+     @Column(name = "sellPrice", nullable = false)
      int sellPrice ;
      int tax ;
     

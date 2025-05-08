@@ -1,55 +1,77 @@
 package com.example.ecommerce.model;
 
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "orders")
 public class Order {
-    int orderID;
-    Customer customer;
-    LocalDate orderDate;
-    int totalAmount;
-    short status;
-    
-    public int getOrderID() {
-        return orderID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int orderid;
+    Date orderdate;
+    double taxvat;
+    double netamount;
+    double totalAmount;
+    int employeeid;
+    int customerid;
+
+    public int getOrderid() {
+        return orderid;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setOrderid(int orderid) {
+        this.orderid = orderid;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Date getOrderdate() {
+        return orderdate;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setOrderdate(Date orderdate) {
+        this.orderdate = orderdate;
     }
 
-    public LocalDate getOrderDate() {
-        return orderDate;
+    public double getTaxvat() {
+        return taxvat;
     }
 
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
+    public void setTaxvat(double taxvat) {
+        this.taxvat = taxvat;
     }
 
-    public int getTotalAmount() {
+    public double getNetamount() {
+        return netamount;
+    }
+
+    public void setNetamount(double netamount) {
+        this.netamount = netamount;
+    }
+
+    public double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(int totalAmount) {
+    public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
 
-    public short getStatus() {
-        return status;
+    public int getEmployeeid() {
+        return employeeid;
     }
 
-    public void setStatus(short status) {
-        this.status = status;
+    public void setEmployeeid(int employeeid) {
+        this.employeeid = employeeid;
+    }
+
+    public int getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(int customerid) {
+        this.customerid = customerid;
     }
 
     public List<OrderItem> getList_OrderItems() {
@@ -60,19 +82,18 @@ public class Order {
         this.list_OrderItems = list_OrderItems;
     }
 
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     List<OrderItem> list_OrderItems = new ArrayList<>();
-    public Order(int orderID, Customer customer,  int totalAmount, short  status) {
-        this.orderID = orderID;
-        this.customer = customer;
+    public Order(int orderID, int customerID,  int totalAmount, short  status) {
+        this.orderid = orderID;
+        this.customerid = customerID;
         this.totalAmount = totalAmount;
-        this.status = status;
     }
 
     public void addOrderItem(OrderItem orderItem1) {
         // TODO Auto-generated method stub
         list_OrderItems.add(orderItem1);
     }
-    
 
 
 }

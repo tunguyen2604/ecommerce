@@ -1,47 +1,53 @@
 package com.example.ecommerce.model;
 
-public class Stationary extends Products {
-    private int stationary_id;
-    private String brand= "null";
-    private String color = "null";
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "stationary")
+@DiscriminatorValue("stationary")
+public class Stationary extends Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer id;
 
+    @OneToOne
+    @JoinColumn(name = "product_id")
+    Product product;
     
-  
-    public Stationary(int products_id, String image, int type, String name, int purchasePrice, int quantity,
-            int sellPrice, int tax, int stationary_id, String brand, String color) {
-        super(products_id, image, type, name, purchasePrice, quantity, sellPrice, tax);
-        this.stationary_id = stationary_id;
+    String brand;
+    String type;
+
+    public Stationary() {super();}
+
+
+    public Stationary(Integer id, String name, Integer quantity, Double importprice, Double sellprice, String image,
+            Double tax, String status, String description, Integer categoryid, Integer id2, Product product,
+            String brand, String type) {
+        super(id, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
+        id = id2;
+        this.product = product;
         this.brand = brand;
-        this.color = color;
+        this.type = type;
     }
-
-
 
 
     public void displayImformation(){
         System.out.println("name: "+this.name);
         System.out.println("category: "+this.type);
         System.out.println("brand: "+this.brand);
-        System.out.println("color: "+this.color);
-        System.out.printf("cost: %d\n", this.sellPrice);
+        //System.out.println("color: "+this.color);
+        //System.out.printf("cost: %d\n", this.sellPrice);
     }
 
 
-
-
-    public int getStationary_id() {
-        return stationary_id;
+    public Integer getId() {
+        return id;
     }
 
 
-
-
-    public void setStationary_id(int stationary_id) {
-        this.stationary_id = stationary_id;
+    public void setId(int id) {
+        this.id = id;
     }
-
-
 
 
     public String getBrand() {
@@ -49,25 +55,23 @@ public class Stationary extends Products {
     }
 
 
-
-
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
 
+    public String getType() {
+        return type;
+    }
 
 
-    public String getColor() {
-        return color;
+    public void setType(String type) {
+        this.type = type;
     }
 
 
 
 
-    public void setColor(String color) {
-        this.color = color;
-    }
 
 
     
