@@ -2,58 +2,47 @@ package com.example.ecommerce.model;
 
 import java.util.ArrayList;
 
-public class Cart {
-    public static final int MAX_AMOUNT = 20;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
 
-    private ArrayList<Book> itemsOrdered;
+@Entity
+public class Cart {
+    @Id
+    int id;
+
+    ArrayList<Product> itemsOrdered;
+
+    @OneToOne
+    @MapsId // dùng chung khóa chính với Customer
+    @JoinColumn(name = "id")
+    private Customer customer;
 
     public Cart() {
         itemsOrdered = new ArrayList<>(); 
     }
-    private int quantityDVDintheCart = 0;
 
-    public static int getMaxAmount() {
-        return MAX_AMOUNT;
-    }
-    public void listDVDInTheCart(){
-        for(Book product: this.itemsOrdered){
-            product.displayBook();
-        }
+    public void addProduct(Product p) {
+        if(itemsOrdered.indexOf(p) == -1) itemsOrdered.add(p);
     }
 
-    public int getQuantityDVDintheCart() {
-        return quantityDVDintheCart;
-    }
-
-    public boolean addDVD(Book dvd){
-        if(quantityDVDintheCart<20){
-            if (dvd != null) { // Kiểm tra null trước khi thêm
-                itemsOrdered.add(dvd);
-            }
-            this.quantityDVDintheCart++;
-            return true;
-        }
-        System.err.println("khong the add them dvd");
-        return false;
-
+    public void deleteProduct(Product p) {
+        if(itemsOrdered.indexOf(p) != -1) itemsOrdered.remove(p);
     }
 
     public double totalCost() {
         double sum = 0;
-        for (Book item : itemsOrdered) {
-            sum+= item.getSellPrice();
+        for (Product item : itemsOrdered) {
+            sum+= item.getSellprice();
         }
         return sum;
     }
 
-    public ArrayList<Book> getItemsOrdered() {
+    public ArrayList<Product> getItemsOrdered() {
         return itemsOrdered;
-    }
-
-    public void setItemsOrdered(ArrayList<Book> itemsOrdered) {
-        this.itemsOrdered = itemsOrdered;
-    }
- 
+    } 
 
 }
 

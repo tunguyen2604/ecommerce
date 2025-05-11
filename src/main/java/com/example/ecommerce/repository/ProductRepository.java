@@ -1,11 +1,11 @@
-package com.example.ecommerce.repository;
+package ecommerce.src.main.java.com.example.ecommerce.repository;
 
-import com.example.ecommerce.model.Products;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
+import com.example.ecommerce.model.Product;
 
-@Repository
-public interface ProductRepository extends JpaRepository<Products, Integer> {
-    Products findByProductname(String name);
+public interface ProductRepository extends JpaRepository<Product, Integer> {
+    Optional<Product> findByName(String name);
 }
