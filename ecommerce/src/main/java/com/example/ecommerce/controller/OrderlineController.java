@@ -13,7 +13,7 @@ import com.example.ecommerce.repository.OrderLineRepository;
 
 
 @Controller
-public class OrderHistoryController {
+public class OrderlineController {
     @Autowired
     private OrderLineRepository orderLineRepository;
     @GetMapping("/orderlines")
