@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.ecommerce.model.Orderlines;
-import com.example.ecommerce.repository.OrderLineRepository;
+import com.example.ecommerce.repository.OrderlineRepository;
 
 
 @Controller
-public class OrderHistoryController {
+public class OrderlineController {
     @Autowired
-    private OrderLineRepository orderLineRepository;
+    private OrderlineRepository orderLineRepository;
     @GetMapping("/orderlines")
     public String getMethodName(Model model, @RequestParam("customer_id") String customer_id) {
-        List<Orderlines> order_lines = orderLineRepository.fetchJoinedOrderItems();
-        model.addAttribute("orderlines", order_lines);
+        List<Orderlines> orderlines = orderLineRepository.fetchJoinedOrderItems();
+        model.addAttribute("orderlines", orderlines);
         return "orderlines";
     }
     
