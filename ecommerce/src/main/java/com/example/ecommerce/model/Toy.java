@@ -1,55 +1,81 @@
 package com.example.ecommerce.model;
 
-public class Toy extends  Products{
-    
+import jakarta.persistence.*;
 
-    public Toy(int products_id, String image, int type, String name, int purchasePrice, int quantity, int sellPrice,
-            int tax, String category, double cost, int suitableAge) {
-        super(products_id, image, type, name, purchasePrice, quantity, sellPrice, tax);
-        this.category = category;
-        this.cost = cost;
-        this.suitableAge = suitableAge;
+@Entity
+@Table(name = "toy")
+@DiscriminatorValue("toy")
+public class Toy extends  Product{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer id;
+
+    @OneToOne
+    @JoinColumn(name = "product_id")
+    Product product;
+
+    String brand;
+    String suitableage;
+
+    public Toy() {super();}
+
+
+
+
+    public Toy(Integer id, String name, Integer quantity, Double importprice, Double sellprice, String image,
+            Double tax, String status, String description, Integer categoryid, Integer id2, Product product,
+            String brand, String suitableage) {
+        super(id, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
+        id = id2;
+        this.product = product;
+        this.brand = brand;
+        this.suitableage = suitableage;
     }
 
-    private String category ;
-    private double cost = 0;
-    private int suitableAge;
+
 
     public void displayImformation (){
         System.out.println("title: "+this.name);
-        System.out.println("category: "+this.category);
-        System.out.println("suitable age: "+this.suitableAge);
-        System.out.printf("cost: %.2f\n", this.cost);
+        //System.out.println("category: "+this.category);
+        System.out.println("suitable age: "+this.suitableage);
+        //System.out.printf("cost: %.2f\n", this.cost);
     }
 
-    public String getCategory() {
-        return category;
+
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+
+
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public double getCost() {
-        return cost;
+
+
+    public String getBrand() {
+        return brand;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public int getSuitableAge() {
-        return suitableAge;
+
+
+    public String getSuitableage() {
+        return suitableage;
     }
 
-    public void setSuitableAge(int suitableAge) {
-        this.suitableAge = suitableAge;
+
+
+    public void setSuitableage(String suitableage) {
+        this.suitableage = suitableage;
     }
-    
-
-
-
-
     
 }
 

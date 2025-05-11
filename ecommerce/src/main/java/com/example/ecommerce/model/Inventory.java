@@ -1,34 +1,20 @@
 package com.example.ecommerce.model;
 
-
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Inventory {
-    int lowStockTheshold;
-    
-    public int getLowStockTheshold() {
-        return lowStockTheshold;
-    }
-    public void setLowStockTheshold(int lowStockTheshold) {
-        this.lowStockTheshold = lowStockTheshold;
-    }
-    public HashMap<Products, Integer> getHashMap1() {
-        return hashMap1;
-    }
-    public void setHashMap1(HashMap<Products, Integer> hashMap1) {
-        this.hashMap1 = hashMap1;
-    }
-    //List<Products> listProduct = new ArrayList<>();
-    HashMap<Products, Integer> hashMap1 = new HashMap<>();
-    public void addBook(Products products, Integer integer){
-        hashMap1.put(products, integer);
-      //  listProduct.add(products);
-    }
-    public void inTTin(){
-        for (Products products : hashMap1.keySet()) {
-            System.out.println(products.getName());
-        } 
-    }
+    List<Product> itemsInStock = new ArrayList<Product>();
 
+    public Inventory() {}
+    public void addProduct(Product p) {
+        itemsInStock.add(p);
+    }
+    public List<Product> getItemsInStock() {
+        return itemsInStock;
+    }
+    public void setItemsInStock(List<Product> itemsInStock) {
+        this.itemsInStock = itemsInStock;
+    }
 
 }

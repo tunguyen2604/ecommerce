@@ -1,14 +1,12 @@
 package com.example.ecommerce;
 
-import java.util.Optional;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
 import com.example.ecommerce.model.Customer;
 import com.example.ecommerce.repository.CustomerRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.*;
+import java.util.*;
 
 @SpringBootApplication
 public class EcommerceApplication {
@@ -18,14 +16,14 @@ public class EcommerceApplication {
 	}
 
 	@Bean
-    public CommandLineRunner run(CustomerRepository customerRepository) {
+	public CommandLineRunner run(CustomerRepository customerRepository) {
         return args -> {
             // Lưu user mẫu
-            Customer customer = new Customer();
-            //customerRepository.save(customer);
+            Customer customer = new Customer("nguyenvana");
+            customerRepository.save(customer);
 
             // Tìm theo ID
-            Optional<Customer> found = customerRepository.findById(customer.getID());
+            Optional<Customer> found = customerRepository.findById(customer.getCustomerID());
 
             // In ra terminal
             if (found.isPresent()) {
@@ -34,6 +32,5 @@ public class EcommerceApplication {
                 System.out.println("User not found.");
             }
         };
-    }
-
+	}
 }
