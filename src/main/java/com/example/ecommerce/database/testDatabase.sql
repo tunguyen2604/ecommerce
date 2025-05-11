@@ -1,13 +1,25 @@
--- T?o b?ng Customers
+
+CREATE TABLE cart (
+    cartid BIGSERIAL PRIMARY KEY,
+    customerid INTEGER REFERENCES customer(customerid) ON DELETE CASCADE
+);
+CREATE TABLE cartproduct (
+    cartid BIGSERIAL REFERENCES cart(cartid) ON DELETE CASCADE,
+    id BIGSERIAL REFERENCES product(id) ON DELETE CASCADE,
+    quantity INTEGER,
+    PRIMARY KEY (cartid, id)
+);
+
+
 CREATE TABLE IF NOT EXISTS Customers (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE IF NOT EXISTS order_lines (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     customer_id BIGINT,
     order_id BIGINT,
     product_name TEXT,
@@ -21,7 +33,6 @@ CREATE TABLE IF NOT EXISTS order_lines (
 );
 
 
--- Chèn d? li?u m?u
 INSERT INTO Customers (username, password, email)
 VALUES 
     ('john_doe', '$2a$10$Kf1hYtZTdcXWgXaz6i5UfeS/p3cMa8kkpjqxX8mUtqDZxykRtYVoC', 'john@example.com'),

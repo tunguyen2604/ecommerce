@@ -1,13 +1,8 @@
 package com.example.ecommerce.model;
 
-import jakarta.persistence.*;
 
-@Entity
-@Table(name = "manager")
 public class Manager {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int managerid;
+    Long managerid;
     String managername;
     String email;
     String phone;
@@ -16,11 +11,11 @@ public class Manager {
     public Manager() {
     }
 
-    public int getManagerid() {
+    public Long getManagerid() {
         return managerid;
     }
 
-    public void setManagerid(int managerid) {
+    public void setManagerid(Long managerid) {
         this.managerid = managerid;
     }
 

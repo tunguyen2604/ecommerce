@@ -1,9 +1,9 @@
-package ecommerce.src.main.java.com.example.ecommerce.repository;
+// package com.example.ecommerce.repository;
+// import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.stereotype.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.example.ecommerce.model.Manager;
-
-public interface ManagerRepository extends JpaRepository<Manager, Integer> {
+// import com.example.ecommerce.model.Manager;
+// // @Repository
+// public interface ManagerRepository extends JpaRepository<Manager, Integer> {
     
-}
+// }

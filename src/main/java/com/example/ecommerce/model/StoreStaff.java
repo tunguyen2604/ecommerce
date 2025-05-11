@@ -1,13 +1,8 @@
 package com.example.ecommerce.model;
 
 import java.util.Date;
-import jakarta.persistence.*;
 
-@Entity
-@Table(name = "storestaff") 
 public class StoreStaff {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int employeeid;
     
     String employeename;
