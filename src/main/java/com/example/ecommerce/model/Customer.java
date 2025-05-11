@@ -1,41 +1,107 @@
 package com.example.ecommerce.model;
 
-
-//import java.util.Date;
-
-import jakarta.persistence.*;
-
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Customer")
+@Table(name = "customer") 
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int CustomerID;
+    int customerid;
 
-    @Column(name = "customerName", nullable = false)
-    String customerName;
-
-    @Column(name = "phone", nullable = false)
+    String customername;
+    String firstname;
+    String lastname;
+    String gender;
+    String cardnumber;
     String phone;
+    String email;
     String address;
-    String cardNumber;
+
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
+    Cart cart;
+
+    public Customer() {
+    }
 
     public Customer(String name) {
-        this.customerName = name;
+        this.customername = name;
     }
 
-    public int getCustomerID() {
-        return CustomerID;
+    public int getCustomerid() {
+        return customerid;
     }
-    public void setCustomerID(int customerID) {
-        CustomerID = customerID;
+
+    public void setCustomerid(int customerid) {
+        this.customerid = customerid;
+    }
+
+    public String getCustomername() {
+        return customername;
+    }
+
+    public void setCustomername(String customername) {
+        this.customername = customername;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCardnumber() {
+        return cardnumber;
+    }
+
+    public void setCardnumber(String cardnumber) {
+        this.cardnumber = cardnumber;
+    }
+
+    public Customer(int customerID, String name, String phone, String email, String address) {
+        customerid = customerID;
+        this.customername = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        
+    }
+
+    public int getID() {
+        return customerid;
+    }
+    public void setID(int customerID) {
+        this.customerid = customerID;
     }
     public String getName() {
-        return customerName;
+        return customername;
     }
     public void setName(String name) {
-        this.customerName = name;
+        this.customername = name;
     }
     public String getPhone() {
         return phone;
@@ -43,23 +109,26 @@ public class Customer {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    /*public String getEmail() {
+    public String getEmail() {
         return email;
     }
     public void setEmail(String email) {
         this.email = email;
-    }*/
+    }
     public String getAddress() {
         return address;
     }
     public void setAddress(String address) {
         this.address = address;
     }
-    /*public Date getDOB() {
-        return DOB;
+
+    public Cart getCart() {
+        return cart;
     }
-    public void setDOB(Date dOB) {
-        DOB = dOB;
-    }*/
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+    
     
 }
