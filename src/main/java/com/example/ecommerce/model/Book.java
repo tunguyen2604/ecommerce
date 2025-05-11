@@ -1,54 +1,34 @@
 package com.example.ecommerce.model;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "book")
-@DiscriminatorValue("book")
-public class Book extends Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-
-    @OneToOne
-    @JoinColumn(name = "product_id")
-    Product product;
-    
+public class Book extends Product {    
     String isbn;
     String author;
-    String publisher;
-    
-    public Book() {super();}
-
-    public Book(Integer id, String name, Integer quantity, Double importprice, Double sellprice, String image,
-            Double tax, String status, String description, Integer categoryid) {
-        super(id, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
-    }
-
-
-    public Book(int id, String name, int quantity, double importprice, double sellprice, String image, double tax,
-            String status, String description, int categoryid, int id2, String isbn, String author, String publisher) {
-        super(id, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
-        id = id2;
-        this.isbn = isbn;
-        this.author = author;
-        this.publisher = publisher;
-    }
-
-
+    String publisher;    
     public void displayBook(){
         System.out.println("title: "+this.name);
         //System.out.println("category: "+this.category);
         System.out.println("price: "+this.sellprice);
         System.out.println("quantity: "+this.quantity);
         System.out.println("author: "+this.author);
+    }
+
+
+    public Book(String isbn, String author, String publisher) {
+        this.isbn = isbn;
+        this.author = author;
+        this.publisher = publisher;
+    }
+
+
+    public Book(Long id, String name, int quantity, Double importprice, Double sellprice, String image, Double tax,
+            String status, String description, Long categoryid, String isbn, String author, String publisher) {
+        super(id, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
+        this.isbn = isbn;
+        this.author = author;
+        this.publisher = publisher;
     }
 
 
@@ -67,6 +47,17 @@ public class Book extends Product {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    
     
 }
 

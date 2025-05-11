@@ -1,10 +1,12 @@
-package com.example.ecommerce.repository;
+// package com.example.ecommerce.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.ecommerce.model.Customer;
+// import com.example.ecommerce.model.Customer;
 
 
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    Customer  findByCustomerid(int customerid);
-}
+// @Repository
+// public interface CustomerRepository extends JpaRepository<Customer, Long> {
+//     Customer finByUsername(username);
+
+// }

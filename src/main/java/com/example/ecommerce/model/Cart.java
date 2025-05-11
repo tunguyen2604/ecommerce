@@ -2,23 +2,9 @@ package com.example.ecommerce.model;
 
 import java.util.ArrayList;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToOne;
-
-@Entity
 public class Cart {
-    @Id
-    int id;
-
+    Long customerid;
     ArrayList<Product> itemsOrdered;
-
-    @OneToOne
-    @MapsId // dùng chung khóa chính với Customer
-    @JoinColumn(name = "id")
-    private Customer customer;
 
     public Cart() {
         itemsOrdered = new ArrayList<>(); 
@@ -42,7 +28,20 @@ public class Cart {
 
     public ArrayList<Product> getItemsOrdered() {
         return itemsOrdered;
+    }
+
+    public Long getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(Long customerid) {
+        this.customerid = customerid;
+    }
+
+    public void setItemsOrdered(ArrayList<Product> itemsOrdered) {
+        this.itemsOrdered = itemsOrdered;
     } 
+    
 
 }
 

@@ -1,29 +1,35 @@
 package com.example.ecommerce.model;
 
-import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
 @Entity
-@Table(name = "product")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    Long id;
     String name ;
-    Integer quantity;
+    int quantity;
     Double importprice;
     Double sellprice;
     String image;
     Double tax ;
     String status;
     String description;
-    Integer categoryid;
+    Long categoryid;
 
     public Product() {}
     
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getName() {
@@ -32,7 +38,7 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getQuantity() {
+    public int  getQuantity() {
         return quantity;
     }
     public void setQuantity(Integer quantity) {
@@ -74,14 +80,14 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Integer getCategoryid() {
+    public Long getCategoryid() {
         return categoryid;
     }
-    public void setCategoryid(Integer categoryid) {
+    public void setCategoryid(Long categoryid) {
         this.categoryid = categoryid;
     }
-    public Product(Integer id, String name, Integer quantity, Double importprice, Double sellprice, String image,
-            Double tax, String status, String description, Integer categoryid) {
+    public Product(Long id, String name, int  quantity, Double importprice, Double sellprice, String image,
+            Double tax, String status, String description, Long categoryid) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -93,8 +99,6 @@ public class Product {
         this.description = description;
         this.categoryid = categoryid;
     }
-    
-     
 }
 
 
