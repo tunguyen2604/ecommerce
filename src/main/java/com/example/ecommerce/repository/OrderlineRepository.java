@@ -17,7 +17,7 @@ import com.example.ecommerce.model.Orderlines;
 //     "JOIN orders o ON o.orderid = ol.orderlineid ")
 //     List<Orderlines> fetchJoinedOrderItems();
 //     @Repository
-public interface OrderlineRepository extends JpaRepository<Orderlines, Long> {
+public interface OrderlineRepository extends JpaRepository<Orderlines, Integer> {
 
     @Query(value = """
         SELECT p.name, o.orderdate, ol.quantity, p.sellprice

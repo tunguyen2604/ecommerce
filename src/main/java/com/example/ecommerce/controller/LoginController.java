@@ -21,7 +21,7 @@ public class LoginController {
     }
     @PostMapping("/login")
     public String processLogin(@RequestParam String username, @RequestParam String password, Model model){
-        Customer customer= customerRepository.findByUsername(username);
+        Customer customer= customerRepository.findBycustomername(username);
         if (customer != null && customer.getPassword().equals(password)) {
             return "";
         } else{
