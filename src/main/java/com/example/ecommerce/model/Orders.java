@@ -9,13 +9,13 @@ import jakarta.persistence.Table;
 // @Table(name="order")
 public class Orders {
 
-    int orderid;
+    Long orderid;
     Date orderdate;
     double taxvat;
     double netamount;
-    double totalAmount;
-    int employeeid;
-    int customerid;
+    double totalamount;
+    Long storestaffid;
+    Long customerid;
 
     public int getOrderid() {
         return orderid;
@@ -49,20 +49,20 @@ public class Orders {
         this.netamount = netamount;
     }
 
-    public double getTotalAmount() {
-        return totalAmount;
+    public double getTotalamount() {
+        return totalamount;
     }
 
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setTotalamount(double totalAmount) {
+        this.totalamount = totalAmount;
     }
 
-    public int getEmployeeid() {
-        return employeeid;
+    public int getStorestaffid() {
+        return storestaffid;
     }
 
-    public void setEmployeeid(int employeeid) {
-        this.employeeid = employeeid;
+    public void setStorestaffid(int employeeid) {
+        this.storestaffid = employeeid;
     }
 
     public int getCustomerid() {
@@ -76,6 +76,6 @@ public class Orders {
     public Orders(int orderID, int customerID,  int totalAmount, short  status) {
         this.orderid = orderID;
         this.customerid = customerID;
-        this.totalAmount = totalAmount;
+        this.totalamount = totalAmount;
     }
 }

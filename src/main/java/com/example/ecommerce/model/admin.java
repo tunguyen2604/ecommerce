@@ -1,30 +1,30 @@
 package com.example.ecommerce.model;
 
 
-public class Manager {
-    Long managerid;
-    String managername;
+public class admin {
+    Long adminid;
+    String adminname;
     String email;
     String phone;
     String gender;
 
-    public Manager() {
+    public admin() {
     }
 
-    public Long getManagerid() {
-        return managerid;
+    public Long getAdminid() {
+        return adminid;
     }
 
-    public void setManagerid(Long managerid) {
-        this.managerid = managerid;
+    public void setAdminid(Long managerid) {
+        this.adminid = managerid;
     }
 
-    public String getManagername() {
-        return managername;
+    public String getAdminname() {
+        return adminname;
     }
 
-    public void setManagername(String managername) {
-        this.managername = managername;
+    public void setAdminname(String managername) {
+        this.adminname = managername;
     }
 
     public String getEmail() {
