@@ -13,7 +13,6 @@ public class Customer {
     String phone;
     String email;
     String address;
-
     Cart cart;
 
     public Customer() {

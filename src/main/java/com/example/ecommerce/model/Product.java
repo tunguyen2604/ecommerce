@@ -13,7 +13,7 @@ import jakarta.persistence.InheritanceType;
 public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    Long id;
+    Long productid;
     String name ;
     int quantity;
     Double importprice;
@@ -26,11 +26,11 @@ public class Product {
 
     public Product() {}
     
-    public Long getId() {
-        return id;
+    public Long getProductid() {
+        return productid;
     }
-    public void setId(Long id) {
-        this.id = id;
+    public void setProductid(Long id) {
+        this.productid = id;
     }
     public String getName() {
         return name;
@@ -88,7 +88,7 @@ public class Product {
     }
     public Product(Long id, String name, int  quantity, Double importprice, Double sellprice, String image,
             Double tax, String status, String description, Long categoryid) {
-        this.id = id;
+        this.productid = id;
         this.name = name;
         this.quantity = quantity;
         this.importprice = importprice;

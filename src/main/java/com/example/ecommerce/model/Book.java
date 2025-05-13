@@ -23,9 +23,9 @@ public class Book extends Product {
     }
 
 
-    public Book(Long id, String name, int quantity, Double importprice, Double sellprice, String image, Double tax,
+    public Book(Long productid, String name, int quantity, Double importprice, Double sellprice, String image, Double tax,
             String status, String description, Long categoryid, String isbn, String author, String publisher) {
-        super(id, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
+        super(productid, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
         this.isbn = isbn;
         this.author = author;
         this.publisher = publisher;

@@ -3,11 +3,9 @@ package com.example.ecommerce.model;
 import java.util.Date;
 
 public class StoreStaff {
-    int employeeid;
+    Long storestaffid;
     
-    String employeename;
-    String firstname;
-    String lastname;
+    String storestaffname;
     String email;
     String phone;
     String gender;
@@ -15,31 +13,15 @@ public class StoreStaff {
     String address;
     Date startdate;
     int workhour;
-    int managerid;
-    public int getEmployeeid() {
-        return employeeid;
+    Long adminid;
+    
+    public String getStorestaffname() {
+        return storestaffname;
     }
-    public void setEmployeeid(int employeeid) {
-        this.employeeid = employeeid;
+    public void setStorestaffname(String employeename) {
+        this.storestaffname = employeename;
     }
-    public String getEmployeename() {
-        return employeename;
-    }
-    public void setEmployeename(String employeename) {
-        this.employeename = employeename;
-    }
-    public String getFirstname() {
-        return firstname;
-    }
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-    public String getLastname() {
-        return lastname;
-    }
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+    
     public String getEmail() {
         return email;
     }
@@ -82,19 +64,11 @@ public class StoreStaff {
     public void setWorkhour(int workhour) {
         this.workhour = workhour;
     }
-    public int getManagerid() {
-        return managerid;
-    }
-    public void setManagerid(int managerid) {
-        this.managerid = managerid;
-    }
+    
     public StoreStaff() {}
     public StoreStaff(int employeeid, String employeename, String firstname, String lastname, String email,
             String phone, String gender, String position, String address, Date startdate, int workhour, int managerid) {
-        this.employeeid = employeeid;
-        this.employeename = employeename;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.storestaffname = employeename;
         this.email = email;
         this.phone = phone;
         this.gender = gender;
@@ -102,7 +76,6 @@ public class StoreStaff {
         this.address = address;
         this.startdate = startdate;
         this.workhour = workhour;
-        this.managerid = managerid;
     }
     
 }
