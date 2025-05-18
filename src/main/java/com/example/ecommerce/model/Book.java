@@ -1,34 +1,38 @@
 package com.example.ecommerce.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
-public class Book extends Product {    
+@PrimaryKeyJoinColumn(name = "product_id")
+public class Book extends Product {
+    
     String isbn;
     String author;
-    String publisher;    
+    String publisher;
+    
+    public Book() {super();}
+
+    
+
+
+    public Book(Long id, String name, int quantity, Double importprice, Double sellprice, String image, Double tax,
+            String status, String description, Long categoryid, Long id2, String isbn, String author,
+            String publisher) {
+        super(id, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
+        id = id2;
+        this.isbn = isbn;
+        this.author = author;
+        this.publisher = publisher;
+    }
+
+
+
+
     public void displayBook(){
         System.out.println("title: "+this.name);
         //System.out.println("category: "+this.category);
-        System.out.println("price: "+this.sellprice);
         System.out.println("quantity: "+this.quantity);
         System.out.println("author: "+this.author);
-    }
-
-
-    public Book(String isbn, String author, String publisher) {
-        this.isbn = isbn;
-        this.author = author;
-        this.publisher = publisher;
-    }
-
-
-    public Book(Long productid, String name, int quantity, Double importprice, Double sellprice, String image, Double tax,
-            String status, String description, Long categoryid, String isbn, String author, String publisher) {
-        super(productid, name, quantity, importprice, sellprice, image, tax, status, description, categoryid);
-        this.isbn = isbn;
-        this.author = author;
-        this.publisher = publisher;
     }
 
 
@@ -49,17 +53,17 @@ public class Book extends Product {
     }
 
 
+
+
     public String getPublisher() {
         return publisher;
     }
 
+
+
+
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
-
-    
     
 }
-
-
-

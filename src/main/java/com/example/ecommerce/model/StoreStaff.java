@@ -2,7 +2,13 @@ package com.example.ecommerce.model;
 
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class StoreStaff {
+    @Id
+    
     Long storestaffid;
     
     String storestaffname;

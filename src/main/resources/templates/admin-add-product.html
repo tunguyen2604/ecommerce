@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,8 @@
 <div class="container">
     <h1>Thêm Sản Phẩm Mới</h1>
 
-    <form action="/admin/products/add" method="post" enctype="multipart/form-data" class="product-form">
+    <form action="/admin/products/save" method="post" enctype="multipart/form-data" class="product-form">
+    <form action="/admin/products/save" method="post" class="product-form">
         <label for="name">Tên sản phẩm:</label>
         <input type="text" id="name" name="name" required>
 
@@ -23,6 +24,13 @@
         <label for="category">Danh mục:</label>
         <input type="text" id="category" name="category">
 
+        <label>Loại sản phẩm:</label>
+        <select name="category" required>
+        <option value="book">Sách</option>
+        <option value="stationary">Văn phòng phẩm</option>
+        <option value="toy">Đồ chơi</option>
+        </select>
+
         <label for="image">Hình ảnh:</label>
         <input type="file" id="image" name="image">
 
@@ -31,4 +39,87 @@
 </div>
 
 </body>
-</html>
+</html> -->
+<form action="/admin/products/save" method="post">
+  <label for="category">Category:</label>
+  <select id="category" name="category" required>
+    <option value="">--Chọn loại sản phẩm--</option>
+    <option value="book">Book</option>
+    <option value="stationary">Stationary</option>
+    <option value="toy">Toy</option>
+  </select>
+
+  <!-- Trường chung -->
+  <div>
+    <label for="name">Tên sản phẩm:</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div>
+    <label for="description">Mô tả:</label>
+    <textarea id="description" name="description"></textarea>
+  </div>
+
+  <div>
+    <label for="price">Giá bán:</label>
+    <input type="number" id="price" name="price" step="0.01" required>
+  </div>
+
+  <!-- Book -->
+  <div id="bookFields" style="display:none; margin-top:10px;">
+    <h4>Thông tin sách</h4>
+    <label for="isbn">ISBN <small>(bắt buộc)</small>:</label>
+    <input type="text" id="isbn" name="isbn" required>
+
+    <label for="author">Tác giả <small>(bắt buộc)</small>:</label>
+    <input type="text" id="author" name="author" required>
+
+    <label for="publisher">Nhà xuất bản <small>(bắt buộc)</small>:</label>
+    <input type="text" id="publisher" name="publisher" required>
+  </div>
+
+  <!-- Stationary -->
+  <div id="stationaryFields" style="display:none; margin-top:10px;">
+    <h4>Thông tin văn phòng phẩm</h4>
+    <label for="brandStationary">Thương hiệu <small>(bắt buộc)</small>:</label>
+    <input type="text" id="brandStationary" name="brand" required>
+
+    <label for="typeStationary">Loại <small>(bắt buộc)</small>:</label>
+    <input type="text" id="typeStationary" name="type" required>
+  </div>
+
+  <!-- Toy -->
+  <div id="toyFields" style="display:none; margin-top:10px;">
+    <h4>Thông tin đồ chơi</h4>
+    <label for="brandToy">Thương hiệu <small>(bắt buộc)</small>:</label>
+    <input type="text" id="brandToy" name="brand" required>
+
+    <label for="suitableAge">Độ tuổi phù hợp <small>(bắt buộc)</small>:</label>
+    <input type="text" id="suitableAge" name="suitableage" required>
+  </div>
+
+  <button type="submit">Lưu sản phẩm</button>
+</form>
+
+<script>
+  const categorySelect = document.getElementById('category');
+  const bookFields = document.getElementById('bookFields');
+  const stationaryFields = document.getElementById('stationaryFields');
+  const toyFields = document.getElementById('toyFields');
+
+  categorySelect.addEventListener('change', function() {
+    const value = this.value;
+    bookFields.style.display = 'none';
+    stationaryFields.style.display = 'none';
+    toyFields.style.display = 'none';
+
+    if (value === 'book') {
+      bookFields.style.display = 'block';
+    } else if (value === 'stationary') {
+      stationaryFields.style.display = 'block';
+    } else if (value === 'toy') {
+      toyFields.style.display = 'block';
+    }
+  });
+</script>
+

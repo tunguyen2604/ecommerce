@@ -17,11 +17,13 @@ public class Orders {
     Long storestaffid;
     Long customerid;
 
-    public int getOrderid() {
+    
+
+    public Long getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(int orderid) {
+    public void setOrderid(Long orderid) {
         this.orderid = orderid;
     }
 
@@ -57,25 +59,34 @@ public class Orders {
         this.totalamount = totalAmount;
     }
 
-    public int getStorestaffid() {
+    
+
+    public Long getStorestaffid() {
         return storestaffid;
     }
 
-    public void setStorestaffid(int employeeid) {
-        this.storestaffid = employeeid;
+    public void setStorestaffid(Long storestaffid) {
+        this.storestaffid = storestaffid;
     }
 
-    public int getCustomerid() {
+    public Long getCustomerid() {
         return customerid;
     }
 
-    public void setCustomerid(int customerid) {
+    public void setCustomerid(Long customerid) {
         this.customerid = customerid;
     }
 
-    public Orders(int orderID, int customerID,  int totalAmount, short  status) {
-        this.orderid = orderID;
-        this.customerid = customerID;
-        this.totalamount = totalAmount;
+    public Orders(Long orderid, Date orderdate, double taxvat, double netamount, double totalamount, Long storestaffid,
+            Long customerid) {
+        this.orderid = orderid;
+        this.orderdate = orderdate;
+        this.taxvat = taxvat;
+        this.netamount = netamount;
+        this.totalamount = totalamount;
+        this.storestaffid = storestaffid;
+        this.customerid = customerid;
     }
+
+    
 }

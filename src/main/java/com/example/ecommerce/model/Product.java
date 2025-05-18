@@ -1,6 +1,8 @@
 package com.example.ecommerce.model;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,48 +15,48 @@ import jakarta.persistence.InheritanceType;
 public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    Long productid;
+    @Column(name = "product_id")
+    Long id;
+    
     String name ;
-    int quantity;
-    Double importprice;
-    Double sellprice;
     String image;
     Double tax ;
+    Integer quantity;
     String status;
     String description;
-    Long categoryid;
-
+    Double importPrice;
+    Double sellPrice;
+    //Long categoryid;
+    
     public Product() {}
     
-    public Long getProductid() {
-        return productid;
+    public Double getImportPrice() {
+        return importPrice;
     }
-    public void setProductid(Long id) {
-        this.productid = id;
+
+    public void setImportPrice(Double importPrice) {
+        this.importPrice = importPrice;
+    }
+
+    public Double getSellPrice() {
+        return sellPrice;
+    }
+
+    public void setSellPrice(Double sellPrice) {
+        this.sellPrice = sellPrice;
+    }
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
-    }
-    public int  getQuantity() {
-        return quantity;
-    }
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-    public Double getImportprice() {
-        return importprice;
-    }
-    public void setImportprice(Double importprice) {
-        this.importprice = importprice;
-    }
-    public Double getSellprice() {
-        return sellprice;
-    }
-    public void setSellprice(Double sellprice) {
-        this.sellprice = sellprice;
     }
     public String getImage() {
         return image;
@@ -80,24 +82,23 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Long getCategoryid() {
-        return categoryid;
-    }
-    public void setCategoryid(Long categoryid) {
-        this.categoryid = categoryid;
-    }
+    
     public Product(Long id, String name, int  quantity, Double importprice, Double sellprice, String image,
             Double tax, String status, String description, Long categoryid) {
-        this.productid = id;
+        this.id = id;
         this.name = name;
-        this.quantity = quantity;
-        this.importprice = importprice;
-        this.sellprice = sellprice;
         this.image = image;
         this.tax = tax;
         this.status = status;
         this.description = description;
-        this.categoryid = categoryid;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }
 
